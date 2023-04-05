@@ -1,0 +1,24 @@
+
+
+<router-outlet></router-outlet>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre Episodio</th>
+      <th>Fecha</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of miArreglo">
+      <td>{{ dato.id }}</td>
+      <td>{{ dato.name }}</td>
+      <td>{{ dato.air_date }}</td>
+      <td>{{ dato.episode }}</td>
+  
+    </tr>
+  </tbody>
+</table>
