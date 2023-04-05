@@ -2,6 +2,27 @@
 
 <router-outlet></router-outlet>
 
+<H1>Listado Episodios Rick and Morty</H1>
+
+<table>
+  <tr>
+    <td>
+      Busqueda por nombre
+    </td>
+    <td>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre">
+    </td>
+    <td>
+     <button (click)="buscarPorNombre()">Buscar por Nombre</button>
+    </td>
+  </tr>
+</table>
+
+
+<br>
+<br>
+<br>
+
 
 <table>
   <thead>

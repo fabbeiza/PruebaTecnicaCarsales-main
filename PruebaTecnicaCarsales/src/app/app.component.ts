@@ -9,6 +9,7 @@ import { RickAndMortyService } from './services/rick-and-morty.service';
 export class AppComponent {
   title = 'PruebaTecnicaCarsales';
   miArreglo: any[] = [];
+  nombre: string = '';
   
 
   constructor(private service: RickAndMortyService) {
@@ -16,10 +17,25 @@ export class AppComponent {
   }
 
   ngOnInit(){
-      this.service.getEpisodios().subscribe(resp=> {
+      this.listaEpisodios();
+  }
+
+  listaEpisodios(){
+    this.service.getEpisodios().subscribe(resp=> {
    
-        this.miArreglo = resp.results;
-        console.log(this.miArreglo);
-      })
+      this.miArreglo = resp.results;
+      console.log(this.miArreglo);
+    })
+  }
+
+  buscarPorNombre(){
+    this.nombre = this.nombre.trim();
+    if(this.nombre != "" ){
+      this.miArreglo = this.miArreglo.filter((arr)=> arr.name.toLowerCase().includes(this.nombre.toLowerCase()));
+    }else{
+      this.listaEpisodios();
+    }
+
+     
   }
 }
